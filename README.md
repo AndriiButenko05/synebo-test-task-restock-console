@@ -4,8 +4,8 @@ An internal tool for a warehouse procurement team. The buyer using it has one jo
 is running out and work out what restocking will cost. It is not a storefront — the layout is
 built for information density and scanning speed, not for browsing.
 
-- **Live demo:** _<add Vercel URL>_
-- **Repository:** _<add repository URL>_
+- **Live demo:** _<https://synebo-test-task-restock-console.vercel.app>_
+- **Repository:** _<https://github.com/AndriiButenko05/synebo-test-task-restock-console/tree/develop>_
 
 ## Stack
 
