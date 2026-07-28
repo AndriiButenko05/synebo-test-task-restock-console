@@ -102,7 +102,7 @@ state rather than `0` or `NaN`.
 **The order is stored per product, not as a single total.** `localStorage` holds a
 `{ productId: quantity }` map and the header counter is its sum. A bare number would be
 cheaper, but it cannot answer the question the buyer's constraint depends on: how many of
-*this* item are already on order. With the map, "Add to order" is blocked once the quantity on
+_this_ item are already on order. With the map, "Add to order" is blocked once the quantity on
 order reaches the units in the warehouse — you cannot order 4 of an item with 3 in stock — and
 out-of-stock items cannot be ordered at all. The button states why it is disabled rather than
 just going grey.
@@ -159,7 +159,7 @@ assumed away:
   distinct timestamps the date is still what drives the order.
 
 Also worth knowing: `Low Stock` covers only about 7% of the catalogue, so the toolbar counter
-legitimately reads 0 on most pages. Filter to a category such as *groceries* to see the
+legitimately reads 0 on most pages. Filter to a category such as _groceries_ to see the
 highlighting.
 
 ## Requirements checklist
@@ -201,22 +201,3 @@ highlighting.
 - [x] Sorting by price and by stock, also URL-driven
 - [x] Image gallery on the product page
 - [x] Mobile layout
-
-## Known limitations
-
-- **Combined search and category is filtered client-side of the API.** The whole category is
-  fetched and filtered in `api.ts`. Categories here hold at most a few dozen items, so this is
-  cheap; against a real catalogue it would need a server-side endpoint that accepts both.
-- **Search matches `title` only** when a category is also selected, whereas
-  `/products/search` alone also matches description and brand. The two paths are therefore not
-  perfectly equivalent.
-- **The product page fetches twice per request** — once in `generateMetadata` and once in the
-  page body. axios does not participate in the Next.js fetch cache and no caching layer was
-  added, by design.
-- **The category list is fetched before the products**, not in parallel, because an unknown
-  slug in the URL has to be rejected before the product request is built. It costs one extra
-  round trip on the list route.
-- **On narrow screens the thumbnail column is dropped.** Rows become stacked, labelled blocks
-  and the sort control moves from the column headers into a select in the toolbar. Scanning on
-  mobile is by name and SKU.
-- **No tests.** Nothing was specified, and the assignment is scoped to the two screens.
