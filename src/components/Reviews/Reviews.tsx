@@ -63,9 +63,9 @@ export default function Reviews({ reviews }: ReviewsProps) {
       </div>
 
       <ul className="border border-line-strong">
-        {sortReviews(reviews, order).map((review) => (
+        {sortReviews(reviews, order).map((review, index) => (
           <li
-            key={`${review.reviewerEmail}-${review.date}`}
+            key={`${review.reviewerEmail}-${review.date}-${index}`}
             className="border-b border-line px-3 py-2 last:border-b-0"
           >
             <div className="flex items-baseline gap-2">

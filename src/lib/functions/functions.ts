@@ -21,7 +21,7 @@ export function parsePage(value: string | null | undefined): number {
   return Number.isInteger(parsed) && parsed > 0 ? parsed : 1;
 }
 
-export function buildListQuery(params: ListSearchParams): string {
+function buildListQuery(params: ListSearchParams): string {
   const query = new URLSearchParams();
   if (params.q) query.set("q", params.q);
   if (params.category) query.set("category", params.category);

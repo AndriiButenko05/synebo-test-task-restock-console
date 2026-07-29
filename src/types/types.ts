@@ -56,7 +56,7 @@ export type Category = {
 
 export type SortKey = "price" | "stock";
 
-export type SortOrder = "asc" | "desc";
+type SortOrder = "asc" | "desc";
 
 export type Sort = `${SortKey}-${SortOrder}` | "";
 
