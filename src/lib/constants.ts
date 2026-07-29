@@ -24,7 +24,6 @@ export const PAGE_SIZE = 30;
 
 export const DEBOUNCE_MS = 350;
 
-export const IN_STOCK: AvailabilityStatus = "In Stock";
 export const LOW_STOCK: AvailabilityStatus = "Low Stock";
 export const OUT_OF_STOCK: AvailabilityStatus = "Out of Stock";
 
